@@ -1,0 +1,2 @@
+C:\Users\Dhrumit\Downloads\develop_login_system\Learn2CrackLogin1\app\build\intermediates\classes\debug
+C:\Users\Dhrumit\Downloads\develop_login_system\Learn2CrackLogin1\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-c9ab31fe126e3855180e5f572e0aefa8d326b141.jar

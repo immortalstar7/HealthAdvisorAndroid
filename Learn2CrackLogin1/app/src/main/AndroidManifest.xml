@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.learn2crack"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="9"
+            android:targetSdkVersion="17"/>
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+             
+        <activity android:name="Login"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="Register"
+                  android:label="@string/app_name">
+
+        </activity>
+
+        <activity android:name="Registered"
+                  android:label="@string/app_name">
+
+        </activity>
+
+
+        <activity android:name="Main"
+                  android:label="Learn2Crack USER PANEL">
+
+        </activity>
+       
+        <activity android:name="PasswordReset"
+                  android:label="@string/app_name">
+
+        </activity>
+        <activity android:name="ChangePassword"
+                  android:label="@string/app_name">
+
+        </activity>
+
+        <activity android:name=".library.Profile"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity android:name=".sensefall.TabBarExample"
+            android:label="@string/app_name">
+>
+        </activity>
+        <activity android:name="com.learn2crack.sensefall.ReadAccelData" />
+        <activity android:name=".sensefall.Prediction">
+
+        </activity>
+        <activity android:name=".sensefall.MainActivity" />
+        <activity android:name=".sensefall.DisplayMessageActivity" />
+        <activity android:name=".sensefall.LoadContacts" />
+        <activity
+            android:name=".sensefall.Configure"
+            android:label="@string/title_activity_configure"
+            android:configChanges="orientation|screenLayout"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".sensefall.LoadContacts" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".sensefall.MainActivity" />
+        </activity>
+    </application>
+     <!-- Allow to connect with internet and to know the current network state-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  
+</manifest>
