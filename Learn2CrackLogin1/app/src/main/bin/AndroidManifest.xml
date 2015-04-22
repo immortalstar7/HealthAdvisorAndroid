@@ -62,7 +62,7 @@
             android:parentActivityName=".sensefall.LoadContacts" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".sensefall.FallDetection" />
+                android:value=".sensefall.MainActivity" />
         </activity>
     </application>
      <!-- Allow to connect with internet and to know the current network state-->
@@ -71,7 +71,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   
 </manifest>

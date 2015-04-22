@@ -35,7 +35,7 @@ public final class R {
         public static final int LinearLayout01=0x7f0a0041;
         public static final int above60F=0x7f0a000c;
         public static final int above60M=0x7f0a000b;
-        public static final int action_settings=0x7f0a0042;
+        public static final int action_settings=0x7f0a0043;
         public static final int age=0x7f0a0033;
         public static final int alert=0x7f0a002e;
         public static final int alertpass=0x7f0a0020;
@@ -65,6 +65,7 @@ public final class R {
         public static final int login=0x7f0a0015;
         public static final int loginErrorMsg=0x7f0a0018;
         public static final int logout=0x7f0a002a;
+        public static final int menu_settings=0x7f0a0042;
         public static final int name=0x7f0a0021;
         public static final int newpass=0x7f0a001d;
         public static final int osteopenia=0x7f0a000e;
@@ -121,7 +122,10 @@ public final class R {
         public static final int tab=0x7f030011;
     }
     public static final class menu {
-        public static final int login=0x7f090000;
+        public static final int activity_main=0x7f090000;
+        public static final int configure=0x7f090001;
+        public static final int fall_detection=0x7f090002;
+        public static final int login=0x7f090003;
     }
     public static final class raw {
         public static final int fall=0x7f040000;
