@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+
+import org.apache.http.client.methods.HttpPost;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.app.Activity;
@@ -75,11 +77,11 @@ public class Login extends Activity{
 
 
         passreset.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View view) {
-        Intent myIntent = new Intent(view.getContext(), PasswordReset.class);
-        startActivityForResult(myIntent, 0);
-        finish();
-        }});
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), PasswordReset.class);
+                startActivityForResult(myIntent, 0);
+                finish();
+            }});
 
 
         Btnregister.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +89,7 @@ public class Login extends Activity{
                 Intent myIntent = new Intent(view.getContext(), Register.class);
                 startActivityForResult(myIntent, 0);
                 finish();
-             }});
+            }});
 
 /**
  * Login button click event
@@ -127,11 +129,11 @@ public class Login extends Activity{
     }
 
 
-/**
- * Async Task to check whether internet connection is working.
- **/
+    /**
+     * Async Task to check whether internet connection is working.
+     **/
 
-   private class NetCheck extends AsyncTask<String,String,Boolean>
+    private class NetCheck extends AsyncTask<String,String,Boolean>
     {
         private ProgressDialog nDialog;
 
@@ -147,7 +149,7 @@ public class Login extends Activity{
         }
         /**
          * Gets current device state and checks for working internet connection by trying Google.
-        **/
+         **/
        /* @Override
         protected Boolean doInBackground(String... args){
             ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -178,24 +180,18 @@ public class Login extends Activity{
             }
             return false;
         }*/
-       protected Boolean doInBackground(String... args){
+        protected Boolean doInBackground(String... args){
 
 
 
             ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo netInfo = cm.getActiveNetworkInfo();
             if (netInfo != null && netInfo.isConnected()) {
-                HttpClient httpClient = new DefaultHttpClient();
-                HttpContext localContext = new BasicHttpContext();
-                HttpGet httpGet = new HttpGet("http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB");
-                String text = null;
                 try {
-                    HttpResponse response = httpClient.execute(httpGet, localContext);
-                    HttpEntity entity = response.getEntity();
-                    Log.d("@@@ entity RESPONSE", " " + entity);
-                    URL url = new URL("http://google.com");
+                    URL url = new URL("http://fitbitsample-40998.onmodulus.net/loginUser");
                     HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
                     urlc.setConnectTimeout(3000);
+                    urlc.setRequestMethod("POST");
                     urlc.connect();
                     if (urlc.getResponseCode() == 200) {
                         return true;
@@ -208,8 +204,9 @@ public class Login extends Activity{
                     e.printStackTrace();
                 }
             }
-           return false;
-       }
+            return false;
+
+        }
         @Override
         protected void onPostExecute(Boolean th){
 
@@ -235,7 +232,7 @@ public class Login extends Activity{
 
         String email,password;
 
-       // @Override
+        // @Override
        /* protected void onPreExecute() {
             super.onPreExecute();
 
@@ -262,7 +259,7 @@ public class Login extends Activity{
         @Override
         protected void onPostExecute(JSONObject json) {
             try {
-               if (json.getString(KEY_SUCCESS) != null) {
+                if (json.getString(KEY_SUCCESS) != null) {
 
                     String res = json.getString(KEY_SUCCESS);
 
@@ -270,16 +267,16 @@ public class Login extends Activity{
                         pDialog.setMessage("Loading User Space");
                         pDialog.setTitle("Getting Data");
                         DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                        JSONObject json_user = json.getJSONObject("user");
+                        // JSONObject json_user = json.getJSONObject("user");
                         /**
                          * Clear all previous data in SQlite database.
                          **/
                         UserFunctions logout = new UserFunctions();
                         logout.logoutUser(getApplicationContext());
-                        db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
-                       /**
-                        *If JSON array details are stored in SQlite it launches the User Panel.
-                        **/
+                        //db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
+                        /**
+                         *If JSON array details are stored in SQlite it launches the User Panel.
+                         **/
                         Intent upanel = new Intent(getApplicationContext(), Main.class);
                         upanel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         pDialog.dismiss();
@@ -297,7 +294,7 @@ public class Login extends Activity{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-       }
+        }
     }
     public void NetAsync(View view){
         new NetCheck().execute();

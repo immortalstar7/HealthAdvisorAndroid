@@ -1,10 +1,5 @@
 package com.learn2crack;
 
-/**
- * Author :Raj Amal
- * Email  :raj.amalw@learn2crack.com
- * Website:www.learn2crack.com
- **/
 
 import android.app.Activity;
 import android.content.Intent;
@@ -40,8 +35,8 @@ public class Main extends Activity {
         /**
          * Hashmap to load data from the Sqlite database
          **/
-         HashMap<String,String> user = new HashMap<String, String>();
-         user = db.getUserDetails();
+        HashMap<String,String> user = new HashMap<String, String>();
+        user = db.getUserDetails();
 
 
         /**
@@ -57,9 +52,9 @@ public class Main extends Activity {
 
         });
 
-       /**
-        *Logout from the User Panel which clears the data in Sqlite database
-        **/
+        /**
+         *Logout from the User Panel which clears the data in Sqlite database
+         **/
         btnLogout.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {

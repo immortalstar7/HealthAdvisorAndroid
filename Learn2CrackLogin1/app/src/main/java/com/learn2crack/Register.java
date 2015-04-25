@@ -209,8 +209,8 @@ public class Register extends Activity {
             uname= inputUsername.getText().toString();
             password = inputPassword.getText().toString();
             pDialog = new ProgressDialog(Register.this);
-           // pDialog.setTitle("Contacting Servers");
-           // pDialog.setMessage("Registering ...");
+            // pDialog.setTitle("Contacting Servers");
+            // pDialog.setMessage("Registering ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -240,14 +240,14 @@ public class Register extends Activity {
                     // String red = json.getString(KEY_ERROR);
 
                     //if(Integer.parseInt(res) == 1){
-                   // pDialog.setTitle("Getting Data");
+                    // pDialog.setTitle("Getting Data");
                     //pDialog.setMessage("Loading Info");
 
                     registerErrorMsg.setText("Successfully Registered");
 
 
                     DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                   // JSONObject json_user = json.getJSONObject("user");
+                    // JSONObject json_user = json.getJSONObject("user");
 
                     /**
                      * Removes all the previous data in the SQlite database

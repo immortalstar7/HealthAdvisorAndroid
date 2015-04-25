@@ -88,30 +88,9 @@ public class Profile extends Activity {
         });
     }
 
-       /* btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if ((!inputHeight.getText().toString().equals("")) && (!inputWeight.getText().toString().equals(""))) {
-                    if (inputHeight.getText().toString().length() >=2) {
-                        NetAsync(view);
-
-                    } else {
-                        Toast.makeText(getApplicationContext(),
-                                "Height should be minimum 2 characters", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(),
-                            "One or more fields are empty", Toast.LENGTH_SHORT).show();
-                }
-            }*/
-
-
-
-
 
     private class NetCheck extends AsyncTask<String, String, Boolean> {
-       /* private ProgressDialog nDialog;
+        private ProgressDialog nDialog;
 
         @Override
         protected void onPreExecute() {
@@ -122,7 +101,7 @@ public class Profile extends Activity {
             nDialog.setIndeterminate(false);
             nDialog.setCancelable(true);
             nDialog.show();
-        }*/
+        }
 
         @Override
         protected Boolean doInBackground(String... args) {
@@ -135,7 +114,7 @@ public class Profile extends Activity {
                  */
                 private ProgressDialog pDialog;
 
-                String height, weight;
+                String height, weight,age;
 
                 @Override
                 protected void onPreExecute() {
@@ -153,7 +132,7 @@ public class Profile extends Activity {
 
 
                     UserFunctions userFunction = new UserFunctions();
-                    JSONObject json = userFunction.registerProfile(height, weight);
+                    JSONObject json = userFunction.registerProfile(height, weight,age);
 
                     return json;
 

@@ -15,8 +15,8 @@ public class UserFunctions {
     private JSONParser jsonParser;
 
     //URL of the PHP API
-    private static String loginURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
-    private static String registerURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
+    private static String loginURL = "http://fitbitsample-40998.onmodulus.net/loginUser";
+    private static String registerURL = "http://fitbitsample-40998.onmodulus.net/registerUser";
     private static String forpassURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
     private static String chgpassURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
 
@@ -81,9 +81,9 @@ public class UserFunctions {
 
 
 
-     /**
-      * Function to  Register
-      **/
+    /**
+     * Function to  Register
+     **/
     public JSONObject registerUser(String fname, String lname, String email, String uname, String password){
         // Building Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -97,11 +97,12 @@ public class UserFunctions {
         return json;
     }
 
-    public JSONObject registerProfile(String height,String weight) {
+    public JSONObject registerProfile(String height,String weight,String age) {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("height", height));
         params.add(new BasicNameValuePair("weight", weight));
-        JSONObject json = jsonParser.getJSONFromUrl(registerURL,params);
+        params.add(new BasicNameValuePair("age",age));
+        JSONObject json = jsonParser.getJSONFromUrl(forpassURL,params);
         return json;
     }
     /**
