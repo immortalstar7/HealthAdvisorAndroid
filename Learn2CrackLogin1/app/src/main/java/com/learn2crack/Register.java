@@ -9,6 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -232,6 +233,7 @@ public class Register extends Activity {
             /**
              * Checks for success message.
              **/
+            Log.d("onPOstEXECUT ", "" + json);
             try {
                 if (json != null) {
                     registerErrorMsg.setText("");
@@ -272,16 +274,6 @@ public class Register extends Activity {
 
 
                     finish();
-                    // }
-
-//                        else if (Integer.parseInt(red) ==2){
-//                            pDialog.dismiss();
-//                            registerErrorMsg.setText("User already exists");
-//                        }
-//                        else if (Integer.parseInt(red) ==3){
-//                            pDialog.dismiss();
-//                            registerErrorMsg.setText("Invalid Email id");
-//                        }
 
                 }
 

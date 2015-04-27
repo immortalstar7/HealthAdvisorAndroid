@@ -8,6 +8,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 import android.content.Context;
+import android.util.Log;
 
 
 public class UserFunctions {
@@ -94,6 +95,7 @@ public class UserFunctions {
         params.add(new BasicNameValuePair("uname", uname));
         params.add(new BasicNameValuePair("password", password));
         JSONObject json = jsonParser.getJSONFromUrl(registerURL,params);
+        Log.d("JSON IS", "" + json + "User " +uname);
         return json;
     }
 

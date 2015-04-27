@@ -45,7 +45,7 @@ public class JSONParser {
             HttpResponse httpResponse = httpClient.execute(httpPost);
             HttpEntity httpEntity = httpResponse.getEntity();
             is = httpEntity.getContent();
-
+            Log.d("httpresponse", "" + httpResponse.toString() + "httpentity " +httpEntity.toString()+ "is " +is.toString());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
