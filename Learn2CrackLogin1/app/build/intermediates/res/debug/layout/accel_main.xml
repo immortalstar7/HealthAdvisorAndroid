@@ -31,4 +31,4 @@
         android:text="@string/button1"
         android:onClick="exit_app" />
 	
-</RelativeLayout><!-- From: file:/C:/Users/Manushi/Documents/GitHub/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/layout/accel_main.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/Dhrumit/Documents/GitHub/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/layout/accel_main.xml -->

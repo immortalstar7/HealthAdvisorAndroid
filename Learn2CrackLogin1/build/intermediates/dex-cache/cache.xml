@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/mansijoshi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jar="C:\Users\Dhrumit\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-b4fa78c98cd2db2bd5cf09e1f6fa3259144fefae.jar" />
+        <dex dex="C:\Users\Dhrumit\Documents\GitHub\HealthAdvisorAndroid\Learn2CrackLogin1\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-c9ab31fe126e3855180e5f572e0aefa8d326b141.jar" />
     </item>
 
 </items>
