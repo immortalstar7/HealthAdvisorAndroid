@@ -64,6 +64,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".sensefall.FallDetection" />
         </activity>
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".GraphActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </activity>
+
     </application>
      <!-- Allow to connect with internet and to know the current network state-->
     <uses-permission android:name="android.permission.INTERNET" />
