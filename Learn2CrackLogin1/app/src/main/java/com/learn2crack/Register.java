@@ -9,6 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -209,8 +210,8 @@ public class Register extends Activity {
             uname= inputUsername.getText().toString();
             password = inputPassword.getText().toString();
             pDialog = new ProgressDialog(Register.this);
-           // pDialog.setTitle("Contacting Servers");
-           // pDialog.setMessage("Registering ...");
+            // pDialog.setTitle("Contacting Servers");
+            // pDialog.setMessage("Registering ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -232,6 +233,7 @@ public class Register extends Activity {
             /**
              * Checks for success message.
              **/
+            Log.d("onPOstEXECUT ", "" + json);
             try {
                 if (json != null) {
                     registerErrorMsg.setText("");
@@ -240,14 +242,14 @@ public class Register extends Activity {
                     // String red = json.getString(KEY_ERROR);
 
                     //if(Integer.parseInt(res) == 1){
-                   // pDialog.setTitle("Getting Data");
+                    // pDialog.setTitle("Getting Data");
                     //pDialog.setMessage("Loading Info");
 
                     registerErrorMsg.setText("Successfully Registered");
 
 
                     DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                   // JSONObject json_user = json.getJSONObject("user");
+                    // JSONObject json_user = json.getJSONObject("user");
 
                     /**
                      * Removes all the previous data in the SQlite database
@@ -272,16 +274,6 @@ public class Register extends Activity {
 
 
                     finish();
-                    // }
-
-//                        else if (Integer.parseInt(red) ==2){
-//                            pDialog.dismiss();
-//                            registerErrorMsg.setText("User already exists");
-//                        }
-//                        else if (Integer.parseInt(red) ==3){
-//                            pDialog.dismiss();
-//                            registerErrorMsg.setText("Invalid Email id");
-//                        }
 
                 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="color1">#37bdb4</color>
     <color name="color2">#ea5265</color>
@@ -10,11 +10,11 @@
     <color name="rounded_container_bg">#80000000</color>
     <color name="rounded_container_border">#3b3f44</color>
     <color name="transparent_background">#00FF0000</color>
-    <!-- From: file:/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="Read">Read Excel</string>
     <string name="Write">Write Excel</string>
@@ -36,7 +36,7 @@
     <string name="textview1">System Online</string>
     <string name="title_activity_configure">Configure</string>
     <string name="title_activity_main">Fall detection</string>
-    <!-- From: file:/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

@@ -53,7 +53,7 @@ public class ChangePassword extends Activity {
 
         cancel = (Button) findViewById(R.id.btcancel);
         cancel.setOnClickListener(new View.OnClickListener(){
-        public void onClick(View arg0){
+            public void onClick(View arg0){
 
                 Intent login = new Intent(getApplicationContext(), Main.class);
 
@@ -84,8 +84,8 @@ public class ChangePassword extends Activity {
         protected void onPreExecute(){
             super.onPreExecute();
             nDialog = new ProgressDialog(ChangePassword.this);
-           // nDialog.setMessage("Loading..");
-           // nDialog.setTitle("Checking Network");
+            // nDialog.setMessage("Loading..");
+            // nDialog.setTitle("Checking Network");
             nDialog.setIndeterminate(false);
             nDialog.setCancelable(true);
             nDialog.show();

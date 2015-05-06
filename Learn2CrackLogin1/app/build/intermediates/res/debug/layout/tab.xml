@@ -12,4 +12,4 @@ android:layout_height="wrap_content" android:layout_width="fill_parent"></TabWid
 android:layout_height="fill_parent" android:layout_width="fill_parent"></FrameLayout>
 </LinearLayout>
 
-</TabHost><!-- From: file:/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/layout/tab.xml -->
+</TabHost><!-- From: file:/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/layout/tab.xml -->

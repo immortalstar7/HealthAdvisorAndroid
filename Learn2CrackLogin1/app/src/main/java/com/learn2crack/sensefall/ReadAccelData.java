@@ -1,6 +1,8 @@
 package com.learn2crack.sensefall;
 
-
+/**
+ * Created by Mansi Joshi on 3/15/15.
+ */
 
 //import android.annotation.SuppressLint;
 import java.util.List;
@@ -179,7 +181,7 @@ public class ReadAccelData extends Activity implements SensorEventListener {
 		if(!prev_state1.equalsIgnoreCase(curr_state1)){
       	  if(curr_state1.equalsIgnoreCase("sitting")){
       		  
-  			  m2_sit.start();
+  			 // m2_sit.start();
   		  
   	  }
       	  

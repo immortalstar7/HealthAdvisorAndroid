@@ -1,22 +1,22 @@
 -- Merging decision tree log ---
 manifest
 ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
 	package
-		ADDED from AndroidManifest.xml:3:11
+		ADDED from AndroidManifest.xml:3:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	android:versionName
-		ADDED from AndroidManifest.xml:5:11
+		ADDED from AndroidManifest.xml:5:5
 	android:versionCode
-		ADDED from AndroidManifest.xml:4:11
+		ADDED from AndroidManifest.xml:4:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
 uses-sdk
 ADDED from AndroidManifest.xml:6:5
 	android:targetSdkVersion
-		ADDED from AndroidManifest.xml:7:13
+		ADDED from AndroidManifest.xml:7:9
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	android:minSdkVersion
@@ -32,7 +32,7 @@ ADDED from AndroidManifest.xml:8:5
 activity#com.learn2crack.Login
 ADDED from AndroidManifest.xml:10:9
 	android:label
-		ADDED from AndroidManifest.xml:11:19
+		ADDED from AndroidManifest.xml:11:13
 	android:name
 		ADDED from AndroidManifest.xml:10:19
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
@@ -48,31 +48,31 @@ ADDED from AndroidManifest.xml:14:17
 activity#com.learn2crack.Register
 ADDED from AndroidManifest.xml:17:9
 	android:label
-		ADDED from AndroidManifest.xml:18:19
+		ADDED from AndroidManifest.xml:18:13
 	android:name
 		ADDED from AndroidManifest.xml:17:19
 activity#com.learn2crack.Registered
 ADDED from AndroidManifest.xml:22:9
 	android:label
-		ADDED from AndroidManifest.xml:23:19
+		ADDED from AndroidManifest.xml:23:13
 	android:name
 		ADDED from AndroidManifest.xml:22:19
 activity#com.learn2crack.Main
 ADDED from AndroidManifest.xml:28:9
 	android:label
-		ADDED from AndroidManifest.xml:29:19
+		ADDED from AndroidManifest.xml:29:13
 	android:name
 		ADDED from AndroidManifest.xml:28:19
 activity#com.learn2crack.PasswordReset
 ADDED from AndroidManifest.xml:33:9
 	android:label
-		ADDED from AndroidManifest.xml:34:19
+		ADDED from AndroidManifest.xml:34:13
 	android:name
 		ADDED from AndroidManifest.xml:33:19
 activity#com.learn2crack.ChangePassword
 ADDED from AndroidManifest.xml:37:9
 	android:label
-		ADDED from AndroidManifest.xml:38:19
+		ADDED from AndroidManifest.xml:38:13
 	android:name
 		ADDED from AndroidManifest.xml:37:19
 activity#com.learn2crack.library.Profile
@@ -113,18 +113,18 @@ ADDED from AndroidManifest.xml:57:9
 		ADDED from AndroidManifest.xml:61:13
 	android:label
 		ADDED from AndroidManifest.xml:59:13
-	android:parentActivityName
-		ADDED from AndroidManifest.xml:62:13
 	android:configChanges
 		ADDED from AndroidManifest.xml:60:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:62:13
 	android:name
 		ADDED from AndroidManifest.xml:58:13
 meta-data#android.support.PARENT_ACTIVITY
 ADDED from AndroidManifest.xml:63:13
-	android:value
-		ADDED from AndroidManifest.xml:65:17
 	android:name
 		ADDED from AndroidManifest.xml:64:17
+	android:value
+		ADDED from AndroidManifest.xml:65:17
 activity#com.learn2crack.GraphActivity
 ADDED from AndroidManifest.xml:72:9
 	android:screenOrientation

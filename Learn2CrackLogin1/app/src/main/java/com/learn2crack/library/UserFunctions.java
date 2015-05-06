@@ -8,6 +8,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 import android.content.Context;
+import android.util.Log;
 
 
 public class UserFunctions {
@@ -15,8 +16,8 @@ public class UserFunctions {
     private JSONParser jsonParser;
 
     //URL of the PHP API
-    private static String loginURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
-    private static String registerURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
+    private static String loginURL = "http://fitbitsample-40998.onmodulus.net/loginUser";
+    private static String registerURL = "http://fitbitsample-40998.onmodulus.net/registerUser";
     private static String forpassURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
     private static String chgpassURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
 
@@ -81,9 +82,9 @@ public class UserFunctions {
 
 
 
-     /**
-      * Function to  Register
-      **/
+    /**
+     * Function to  Register
+     **/
     public JSONObject registerUser(String fname, String lname, String email, String uname, String password){
         // Building Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -94,14 +95,16 @@ public class UserFunctions {
         params.add(new BasicNameValuePair("uname", uname));
         params.add(new BasicNameValuePair("password", password));
         JSONObject json = jsonParser.getJSONFromUrl(registerURL,params);
+        Log.d("JSON IS", "" + json + "User " +uname);
         return json;
     }
 
-    public JSONObject registerProfile(String height,String weight) {
+    public JSONObject registerProfile(String height,String weight,String age) {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("height", height));
         params.add(new BasicNameValuePair("weight", weight));
-        JSONObject json = jsonParser.getJSONFromUrl(registerURL,params);
+        params.add(new BasicNameValuePair("age",age));
+        JSONObject json = jsonParser.getJSONFromUrl(forpassURL,params);
         return json;
     }
     /**
