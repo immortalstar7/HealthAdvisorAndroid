@@ -1,0 +1,2 @@
+/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/build/intermediates/classes/debug
+/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-b4fa78c98cd2db2bd5cf09e1f6fa3259144fefae.jar
