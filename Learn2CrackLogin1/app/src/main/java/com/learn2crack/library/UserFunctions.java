@@ -20,12 +20,13 @@ public class UserFunctions {
     private static String registerURL = "http://fitbitsample-40998.onmodulus.net/registerUser";
     private static String forpassURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
     private static String chgpassURL = "http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB";
-
+    private static String profileURL = "http://fitbitsample-40998.onmodulus.net/updateProfile";
 
     private static String login_tag = "login";
     private static String register_tag = "register";
     private static String forpass_tag = "forpass";
     private static String chgpass_tag = "chgpass";
+    private static String profile_tag="profile";
 
 
     // constructor
@@ -99,12 +100,14 @@ public class UserFunctions {
         return json;
     }
 
-    public JSONObject registerProfile(String height,String weight,String age) {
+    public JSONObject ProfileUpdate(String height,String weight,String age) {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("tag",profile_tag));
         params.add(new BasicNameValuePair("height", height));
         params.add(new BasicNameValuePair("weight", weight));
         params.add(new BasicNameValuePair("age",age));
-        JSONObject json = jsonParser.getJSONFromUrl(forpassURL,params);
+        //params.add(new BasicNameValuePair("email",email));
+        JSONObject json = jsonParser.getJSONFromUrl(profileURL,params);
         return json;
     }
     /**

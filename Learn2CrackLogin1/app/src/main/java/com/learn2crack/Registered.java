@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.learn2crack.library.DatabaseHandler;
-import com.learn2crack.library.Profile;
 
 import java.util.HashMap;
 

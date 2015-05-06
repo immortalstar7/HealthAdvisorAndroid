@@ -154,6 +154,7 @@ public class Register extends Activity {
                     URL url = new URL("http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB");
                     HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
                     urlc.setConnectTimeout(3000);
+                    //urlc.setRequestMethod("POST");
                     urlc.connect();
                     if (urlc.getResponseCode() == 200) {
                         return true;
@@ -210,8 +211,6 @@ public class Register extends Activity {
             uname= inputUsername.getText().toString();
             password = inputPassword.getText().toString();
             pDialog = new ProgressDialog(Register.this);
-            // pDialog.setTitle("Contacting Servers");
-            // pDialog.setMessage("Registering ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -239,35 +238,20 @@ public class Register extends Activity {
                     registerErrorMsg.setText("");
                     String res = json.getString("_id");
 
-                    // String red = json.getString(KEY_ERROR);
-
-                    //if(Integer.parseInt(res) == 1){
-                    // pDialog.setTitle("Getting Data");
-                    //pDialog.setMessage("Loading Info");
 
                     registerErrorMsg.setText("Successfully Registered");
 
 
                     DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                    // JSONObject json_user = json.getJSONObject("user");
 
-                    /**
-                     * Removes all the previous data in the SQlite database
-                     **/
 
                     UserFunctions logout = new UserFunctions();
                     logout.logoutUser(getApplicationContext());
-                    //db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
-                    /**
-                     * Stores registered data in SQlite Database
-                     * Launch Registered screen
-                     **/
+
 
                     Intent registered = new Intent(getApplicationContext(), Registered.class);
 
-                    /**
-                     * Close all views before launching Registered screen
-                     **/
+
                     registered.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     pDialog.dismiss();
                     startActivity(registered);

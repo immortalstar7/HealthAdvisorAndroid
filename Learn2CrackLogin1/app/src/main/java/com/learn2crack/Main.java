@@ -32,16 +32,11 @@ public class Main extends Activity {
 
         DatabaseHandler db = new DatabaseHandler(getApplicationContext());
 
-        /**
-         * Hashmap to load data from the Sqlite database
-         **/
         HashMap<String,String> user = new HashMap<String, String>();
         user = db.getUserDetails();
 
 
-        /**
-         * Change Password Activity Started
-         **/
+
         changepas.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0){
 
@@ -52,9 +47,7 @@ public class Main extends Activity {
 
         });
 
-        /**
-         *Logout from the User Panel which clears the data in Sqlite database
-         **/
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {

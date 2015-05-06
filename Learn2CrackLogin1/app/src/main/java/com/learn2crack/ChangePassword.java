@@ -84,8 +84,6 @@ public class ChangePassword extends Activity {
         protected void onPreExecute(){
             super.onPreExecute();
             nDialog = new ProgressDialog(ChangePassword.this);
-            // nDialog.setMessage("Loading..");
-            // nDialog.setTitle("Checking Network");
             nDialog.setIndeterminate(false);
             nDialog.setCancelable(true);
             nDialog.show();

@@ -14,11 +14,10 @@ import java.util.HashMap;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    // All Static variables
-    // Database Version
+
     private static final int DATABASE_VERSION = 1;
 
-    // Database Name
+
     private static final String DATABASE_NAME = "cloud_contacts";
 
     // Login table name

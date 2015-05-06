@@ -28,12 +28,12 @@ import java.net.URL;
 
 public class PasswordReset extends Activity {
 
-private static String KEY_SUCCESS = "success";
-private static String KEY_ERROR = "error";
+    private static String KEY_SUCCESS = "success";
+    private static String KEY_ERROR = "error";
 
-  EditText email;
-  TextView alert;
-  Button resetpass;
+    EditText email;
+    TextView alert;
+    Button resetpass;
 
 
 
@@ -43,7 +43,7 @@ private static String KEY_ERROR = "error";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-  
+
         setContentView(R.layout.passwordreset);
 
         Button login = (Button) findViewById(R.id.bktolog);
@@ -67,147 +67,18 @@ private static String KEY_ERROR = "error";
                 Intent myIntent = new Intent(view.getContext(), PasswordReset.class);
                 startActivityForResult(myIntent, 0);
                 finish();
-               NetAsync(view);
+                //NetAsync(view);
 
             }
 
 
 
-        });}
-
-    private class NetCheck extends AsyncTask<String,String,Boolean>
-
-                {
-                    private ProgressDialog nDialog;
-
-                    @Override
-                    protected void onPreExecute(){
-                        super.onPreExecute();
-                        nDialog = new ProgressDialog(PasswordReset.this);
-                       // nDialog.setMessage("Loading..");
-                        //nDialog.setTitle("Checking Network");
-                        nDialog.setIndeterminate(false);
-                        nDialog.setCancelable(true);
-                        nDialog.show();
-                    }
-
-                    @Override
-                    protected Boolean doInBackground(String... args){
-
-
-
-                        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-                        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-                        if (netInfo != null && netInfo.isConnected()) {
-                            try {
-                                URL url = new URL("http://www.google.com");
-                                HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
-                                urlc.setConnectTimeout(3000);
-                                urlc.connect();
-                                if (urlc.getResponseCode() == 200) {
-                                    return true;
-                                }
-                            } catch (MalformedURLException e1) {
-                                // TODO Auto-generated catch block
-                                e1.printStackTrace();
-                            } catch (IOException e) {
-                                // TODO Auto-generated catch block
-                                e.printStackTrace();
-                            }
-                        }
-                        return false;
-
-                    }
-                    @Override
-                    protected void onPostExecute(Boolean th){
-
-                        if(th == true){
-                            nDialog.dismiss();
-                            new ProcessRegister().execute();
-                        }
-                        else{
-                            nDialog.dismiss();
-                            alert.setText("Error in Network Connection");
-                        }
-                    }
-                }
+        });}}
 
 
 
 
 
-                private class ProcessRegister extends AsyncTask<String, String, JSONObject> {
-
-
-                    private ProgressDialog pDialog;
-
-                    String forgotpassword;
-                    @Override
-                    protected void onPreExecute() {
-                        super.onPreExecute();
-                        forgotpassword = email.getText().toString();
-
-                        pDialog = new ProgressDialog(PasswordReset.this);
-                       // pDialog.setTitle("Contacting Servers");
-                       // pDialog.setMessage("Getting Data ...");
-                        pDialog.setIndeterminate(false);
-                        pDialog.setCancelable(true);
-                        pDialog.show();
-                    }
-
-                    @Override
-                    protected JSONObject doInBackground(String... args) {
-
-
-                        UserFunctions userFunction = new UserFunctions();
-                        JSONObject json = userFunction.forPass(forgotpassword);
-                        return json;
-
-
-                    }
-
-
-                    @Override
-                    protected void onPostExecute(JSONObject json) {
-                  /**
-                   * Checks if the Password Change Process is sucesss
-                   **/
-                        try {
-                            if (json.getString(KEY_SUCCESS) != null) {
-                                alert.setText("");
-                                String res = json.getString(KEY_SUCCESS);
-                                String red = json.getString(KEY_ERROR);
-
-
-                                if(Integer.parseInt(res) == 1){
-                                   pDialog.dismiss();
-                                    alert.setText("A recovery email is sent to you, see it for more details.");
-
-
-
-                                }
-                                else if (Integer.parseInt(red) == 2)
-                                {    pDialog.dismiss();
-                                    alert.setText("Your email does not exist in our database.");
-                                }
-                                else {
-                                    pDialog.dismiss();
-                                    alert.setText("Error occured in changing Password");
-                                }
-
-
-
-
-                            }}
-                        catch (JSONException e) {
-                            e.printStackTrace();
-
-
-                        }
-                    }}
-            public void NetAsync(View view){
-                new NetCheck().execute();
-            }}
 
 
 

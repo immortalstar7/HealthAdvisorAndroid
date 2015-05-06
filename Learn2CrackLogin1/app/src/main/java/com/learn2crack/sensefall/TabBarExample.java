@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
-import com.learn2crack.Login;
+import com.learn2crack.Main;
 import com.learn2crack.R;
 import com.learn2crack.library.Profile;
 
@@ -16,7 +16,11 @@ public class TabBarExample extends TabActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab);
-        
+        Bundle b = getIntent().getExtras();
+        String email1 = (String)b.get("email");
+        //TextView t = (TextView)findViewById(R.id.tv1);
+        //t.setText("Hello " + email1+"!");
+
         /* TabHost will have Tabs */
         TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
         
@@ -34,7 +38,7 @@ public class TabBarExample extends TabActivity {
         firstTabSpec.setIndicator("Detect Fall").setContent(new Intent(this,MainActivity.class));
         secondTabSpec.setIndicator("Exercises").setContent(new Intent(this,Prediction.class));
         thirdTabSpec.setIndicator("Profile").setContent(new Intent(this,Profile.class));
-        fourthTabSpec.setIndicator("Activity").setContent(new Intent(this,Profile.class));
+        fourthTabSpec.setIndicator("Activity").setContent(new Intent(this,Main.class));
         /* Add tabSpec to the TabHost to display. */
         tabHost.addTab(firstTabSpec);
         tabHost.addTab(secondTabSpec);

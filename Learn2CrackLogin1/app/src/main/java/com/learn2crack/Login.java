@@ -3,38 +3,24 @@ package com.learn2crack;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 
-import org.apache.http.client.methods.HttpPost;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.learn2crack.library.DatabaseHandler;
-import com.learn2crack.library.Profile;
 import com.learn2crack.library.UserFunctions;
 import com.learn2crack.sensefall.TabBarExample;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -42,6 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Login extends Activity{
+
 
     Button btnLogin;
     Button Btnregister;
@@ -96,37 +83,17 @@ public class Login extends Activity{
  * A Toast is set to alert when the Email and Password field is empty
  **/
         btnLogin.setOnClickListener(new View.OnClickListener() {
-
+            @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), TabBarExample.class);
-                startActivityForResult(myIntent, 0);
-                finish();
+                String email1 = String.valueOf(inputEmail.getText());
+                Bundle b = new Bundle();
+                b.putString("email",email1);
+                Intent myIntent = new Intent(getApplicationContext(), TabBarExample.class);
+                myIntent.putExtras(b);
+                startActivity(myIntent);
                 NetAsync(view);
-            }});
-
-               /* if (  ( !inputEmail.getText().toString().equals("")) && ( !inputPassword.getText().toString().equals("")) )
-                {
-                    //NetAsync(view);
-                }
-                else if ( ( !inputEmail.getText().toString().equals("")) )
-                {
-                    Toast.makeText(getApplicationContext(),
-                            "Password field empty", Toast.LENGTH_SHORT).show();
-                }
-                else if ( ( !inputPassword.getText().toString().equals("")) )
-                {
-                    Toast.makeText(getApplicationContext(),
-                            "Email field empty", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),
-                            "Email and Password field are empty", Toast.LENGTH_SHORT).show();
-                }
-
             }
-        });*/
-
+        });
     }
 
 
@@ -151,36 +118,7 @@ public class Login extends Activity{
         /**
          * Gets current device state and checks for working internet connection by trying Google.
          **/
-       /* @Override
-        protected Boolean doInBackground(String... args){
-            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo netInfo = cm.getActiveNetworkInfo();
-            if (netInfo != null && netInfo.isConnected()) {
-                HttpClient httpClient = new DefaultHttpClient();
-                HttpContext localContext = new BasicHttpContext();
-                HttpGet httpGet = new HttpGet("http://fitbitsample-40998.onmodulus.net/getStepsForUser/2XXCMB");
-                String text = null;
-                try {
-                    HttpResponse response = httpClient.execute(httpGet, localContext);
-                    HttpEntity entity = response.getEntity();
-                    Log.d("@@@ entity RESPONSE", " " + entity);
-                    URL url = new URL("http://google.com");
-                    HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
-                    urlc.setConnectTimeout(3000);
-                    urlc.connect();
-                    if (urlc.getResponseCode() == 200) {
-                        return true;
-                    }
-                } catch (MalformedURLException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-            return false;
-        }*/
+
         protected Boolean doInBackground(String... args){
 
 
@@ -191,7 +129,7 @@ public class Login extends Activity{
                 try {
                     URL url = new URL("http://fitbitsample-40998.onmodulus.net/loginUser");
                     HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
-                    urlc.setConnectTimeout(3000);
+                    urlc.setConnectTimeout(7000);
                     urlc.setRequestMethod("POST");
                     urlc.connect();
                     if (urlc.getResponseCode() == 200) {
@@ -267,35 +205,21 @@ public class Login extends Activity{
                     loginErrorMsg.setText("");
                     String res = json.getString("_id");
 
-                    // String red = json.getString(KEY_ERROR);
 
-                    //if(Integer.parseInt(res) == 1){
-                    // pDialog.setTitle("Getting Data");
-                    //pDialog.setMessage("Loading Info");
 
                     loginErrorMsg.setText("Successfully Registered");
 
 
                     DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                    // JSONObject json_user = json.getJSONObject("user");
-
-                    /**
-                     * Removes all the previous data in the SQlite database
-                     **/
 
                     UserFunctions logout = new UserFunctions();
                     logout.logoutUser(getApplicationContext());
-                    //db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
-                    /**
-                     * Stores registered data in SQlite Database
-                     * Launch Registered screen
-                     **/
 
-                    Intent upanel = new Intent(getApplicationContext(), Main.class);
 
-                    /**
-                     * Close all views before launching Registered screen
-                     **/
+
+                    Intent upanel = new Intent(getApplicationContext(),Main.class);
+
+
                     upanel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     pDialog.dismiss();
                     startActivity(upanel);
