@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
+import com.learn2crack.BarGraph;
+import com.learn2crack.GraphActivity;
 import com.learn2crack.Login;
 import com.learn2crack.R;
 import com.learn2crack.library.Profile;
@@ -38,7 +40,8 @@ public class TabBarExample extends TabActivity {
         firstTabSpec.setIndicator("Detect Fall").setContent(new Intent(this,MainActivity.class));
         secondTabSpec.setIndicator("Exercises").setContent(new Intent(this,Prediction.class));
         thirdTabSpec.setIndicator("Profile").setContent(new Intent(this,Profile.class));
-        fourthTabSpec.setIndicator("Activity").setContent(new Intent(this,Profile.class));
+        fourthTabSpec.setIndicator("Activity");
+        fourthTabSpec.setContent(new Intent(this, GraphActivity.class));
         /* Add tabSpec to the TabHost to display. */
         tabHost.addTab(firstTabSpec);
         tabHost.addTab(secondTabSpec);

@@ -15,8 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTabHost;
+//import android.support.v4.app.FragmentActivity;
+//import android.support.v4.app.FragmentTabHost;
 
 import com.learn2crack.Login;
 import com.learn2crack.Main;
