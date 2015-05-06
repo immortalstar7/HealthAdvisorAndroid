@@ -2,11 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/Users/mansijoshi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jar="/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/java/com/learn2crack/library/achartengine-1.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/build/intermediates/pre-dexed/debug/achartengine-1.1.0-89409e4213f6e66be5b6b036fd87c6056660e263.jar" />
+    </item>
+    <item
+        jar="/Users/neha24/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-b4fa78c98cd2db2bd5cf09e1f6fa3259144fefae.jar" />
+        <dex dex="/Users/neha24/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-58b8145d07e5801645ea615a67cea78f7c282793.jar" />
     </item>
 
 </items>

@@ -13,6 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+<<<<<<< HEAD
+=======
+import android.os.Bundle;
+//import android.support.v4.app.FragmentActivity;
+//import android.support.v4.app.FragmentTabHost;
+>>>>>>> origin/master
 
 import com.learn2crack.R;
 import com.learn2crack.Registered;

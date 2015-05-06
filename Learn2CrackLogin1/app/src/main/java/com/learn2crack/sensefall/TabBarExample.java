@@ -1,12 +1,22 @@
 package com.learn2crack.sensefall;
 
+/**
+ * Created by Mansi Joshi on 4/15/15.
+ */
+
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
+<<<<<<< HEAD
 import com.learn2crack.Main;
+=======
+import com.learn2crack.BarGraph;
+import com.learn2crack.GraphActivity;
+import com.learn2crack.Login;
+>>>>>>> origin/master
 import com.learn2crack.R;
 import com.learn2crack.library.Profile;
 
@@ -38,7 +48,12 @@ public class TabBarExample extends TabActivity {
         firstTabSpec.setIndicator("Detect Fall").setContent(new Intent(this,MainActivity.class));
         secondTabSpec.setIndicator("Exercises").setContent(new Intent(this,Prediction.class));
         thirdTabSpec.setIndicator("Profile").setContent(new Intent(this,Profile.class));
+<<<<<<< HEAD
         fourthTabSpec.setIndicator("Activity").setContent(new Intent(this,Main.class));
+=======
+        fourthTabSpec.setIndicator("Activity");
+        fourthTabSpec.setContent(new Intent(this, GraphActivity.class));
+>>>>>>> origin/master
         /* Add tabSpec to the TabHost to display. */
         tabHost.addTab(firstTabSpec);
         tabHost.addTab(secondTabSpec);

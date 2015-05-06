@@ -21,4 +21,6 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:18.0.0'
     compile files('lib/mpandroidchartlibrary-2-0-9.jar')
+    compile files('src/main/java/com/learn2crack/library/achartengine-1.1.0.jar')
+    compile files('src/main/java/com/learn2crack/achartengine-1.1.0.jar')
 }
