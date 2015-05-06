@@ -48,4 +48,4 @@
             android:id="@+id/textView" android:layout_below="@+id/logout" android:layout_alignParentRight="true"
             android:textSize="18dp" android:textColor="#000000" android:textAlignment="center"/>
 
-</RelativeLayout><!-- From: file:/C:/Users/Manushi/Documents/GitHub/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/layout/main.xml -->
+</RelativeLayout><!-- From: file:/Users/mansijoshi/Documents/HealthAdvisorAndroid/Learn2CrackLogin1/app/src/main/res/layout/main.xml -->
